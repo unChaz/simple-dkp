@@ -1,0 +1,27 @@
+ul.nav.nav-tabs
+  li(role="presentation", class="active")
+    a(href="/dashboard") Dashboard
+  li.navbar-right(role="presentation")
+    a(href="/logout") signout
+
+.row
+  .col-md-6
+    h1 Pools
+    table.table
+      thead
+        tr
+          th Name
+          th Players
+            tbody
+              tr
+                td 
+                  a(href="/pool") Discord Guild
+                td 25
+              tr
+                td 
+                  a(href="/pool") PUG
+                td 43
+
+    form
+      input(type="text", placeholder="name")
+      input(type="submit", value="create").btn.btn-xs.btn-primary

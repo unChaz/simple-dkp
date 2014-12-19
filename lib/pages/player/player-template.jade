@@ -1,0 +1,93 @@
+ul.nav.nav-tabs
+  li(role="presentation")
+    a(href="/dashboard") Dashboard
+  li(role="presentation")
+    a(href="/pool") Discord Guild
+  li(role="presentation", class="active")
+    a(href="#") Muse
+  li.navbar-right(role="presentation")
+    a(href="/logout") signout
+
+.row
+  .col-md-6
+    h1 Muse
+    table.table.table-striped
+      tbody
+        tr
+          th
+            strong Class
+          th Shaman
+        tr
+          th 
+            strong Specialization
+          th Restoration
+        tr
+          th
+            strong Race
+          th Draenei
+        tr
+          th
+            strong Bosses Downed
+          th 25
+        tr
+          th
+            strong DKP Spent
+          th 356
+        tr
+          th
+            strong DKP Earned
+          th 420
+        tr
+          th
+            strong Net DKP
+          th 64
+
+  .col-md-6
+    h2 Latest Raids
+      
+    table.table
+      thead
+        tr
+          th Name
+          th Date
+          th Net DKP
+        tbody
+          tr
+            td 
+              a(href="/raid") Tuesday Progression
+            td 12/16/2014
+            td -98
+          tr
+            td 
+              a(href="/raid") Thursday Progression
+            td 12/18/2014
+            td 23
+          
+h2 Ledger 
+    
+table.table
+  thead
+    tr
+      th Raid
+      th Type
+      th DKP
+      th Note
+        tbody
+          tr
+            td 
+              a(href="/raid") Tuesday Progression
+            td other
+            td 2
+            td Showed up early
+          tr
+            td 
+              a(href="/raid") Tuesday Progression
+            td Boss Kill
+            td 15
+            td Korgath: Normal
+          tr
+            td 
+              a(href="/raid") Tuesday Progression
+            td Loot
+            td -115
+            td [Hood of Dispassionate Execution]

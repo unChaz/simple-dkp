@@ -1,0 +1,23 @@
+{
+  "name": "boot",
+  "description": "Application Booting component.",
+  "dependencies": {
+    "visionmedia/page.js": "1.3.7"
+  },
+  "local": [
+    "homepage",
+    "dashboard",
+    "user",
+    "pool",
+    "player",
+    "raid"
+  ],
+  "scripts": [ "boot.js" ],
+  "styles": ["index.styl"],
+  "images": [
+    "images/bg.jpg",
+    "images/favicon.ico"
+  ],
+  "main": "boot.js",
+  "license": "MIT"
+}

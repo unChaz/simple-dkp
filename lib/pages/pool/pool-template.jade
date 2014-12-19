@@ -1,0 +1,63 @@
+ul.nav.nav-tabs
+  li(role="presentation")
+    a(href="/dashboard") Dashboard
+  li(role="presentation", class="active")
+    a(href="#") Discord Guild
+  li.navbar-right(role="presentation")
+    a(href="/logout") signout
+      
+.row
+  .col-md-6
+    h2 Players 
+      a.btn.btn-default.btn-sm
+        span.glyphicon.glyphicon-plus
+        
+    table.table
+      thead
+        tr
+          th Player
+          th DKP
+            tbody
+              tr
+                td 
+                  a(href="/player") Muse
+                td 234
+              tr
+                td 
+                  a(href="/player") Yvayne
+                td 434
+
+    h2 Import DKP
+    p With this tool you can import DKP standings from several WoW Addons.
+    div.center-block
+      form(role="form")
+        input(type="file")
+        br
+        select
+          option(value="Quick DKP") Quick DKP
+          option(value="epgp") epgp
+        br
+        br
+        button.btn.btn-primary(type="sumbit") Import
+  .col-md-6
+    h2 Raids 
+      a.btn.btn-default.btn-sm
+        span.glyphicon.glyphicon-plus
+      
+    table.table
+      thead
+        tr
+          th Name
+          th Date
+          th Net DKP
+        tbody
+          tr
+            td 
+              a(href="/raid") Tuesday Progression
+            td 12/16/2014
+            td -98
+          tr
+            td 
+              a(href="/raid") Thursday Progression
+            td 12/18/2014
+            td 23

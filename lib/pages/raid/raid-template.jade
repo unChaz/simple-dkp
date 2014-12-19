@@ -1,0 +1,159 @@
+ul.nav.nav-tabs
+  li(role="presentation")
+    a(href="/dashboard") Dashboard
+  li(role="presentation")
+    a(href="/pool") Discord Guild
+  li(role="presentation", class="active")
+    a(href="#") Tuesday Night Raid
+  li.navbar-right(role="presentation")
+    a(href="/logout") signout
+
+h1 Thursday Highmaul Progression
+
+table.table.table-striped
+  tbody
+    tr
+      th
+        strong Date
+      th 12/18/2014
+    tr
+      th 
+        strong Pool
+      th Discord Guild
+    tr
+      th
+        strong DKP Distributed
+      th 230
+    tr
+      th
+        strong DKP Spent
+      th 214
+    tr
+      th
+        strong # Players
+      th 16
+    tr
+      th
+        strong Bosses Downed
+      th 6
+
+.row
+  .col-md-6
+    h2 Players
+    table.table
+      thead
+        tr
+          th 
+            input(type="checkbox")
+          th Name
+          th Role
+          th &Delta; DKP
+      tbody
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Muse
+          th Healer
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Yvayne
+          th Healer
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Cabanaboy
+          th Tank
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Bigdcamtowin
+          th DPS
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Omnath
+          th DPS
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Aquila
+          th DPS
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Coleo
+          th Healer
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Earthmuffins
+          th Tank
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Natzumi
+          th DPS
+          th 23
+        tr
+          th
+            input(type="checkbox")
+          th 
+            a(href="/player") Sharatmonk
+          th DPS
+          th 23
+              
+    .center-block
+      select
+        option(value="Boss Kill") Boss Kill
+        option(value="Loot") Loot
+        option(value="Other") Other
+      input(type="number", placeholder="DKP", style="width:50px;")
+      input(type="text", placeholder="notes")
+      button.btn.btn-default.btn-sm(type="submit") Add
+          
+  .col-md-6     
+    h2 Ledger
+    table.table
+      thead
+        tr
+          th(style="text-align:center;") Player
+          th(style="text-align:center;") Type
+          th(style="text-align:center;") DKP
+          th(style="text-align:center;") Note
+      tbody
+        tr
+          td(style="text-align:center;") 
+            a(href="/player") Muse
+          td(style="text-align:center;") other
+          td(style="text-align:center;") 2
+          td(style="text-align:center;") Showed up early
+        tr
+          td(style="text-align:center;") 
+            a(href="/player") Muse
+          td(style="text-align:center;") Boss Kill
+          td(style="text-align:center;") 15
+          td(style="text-align:center;") Korgath: Normal
+        tr
+          td(style="text-align:center;") 
+            a(href="/player") Muse
+          td(style="text-align:center;") Loot
+          td(style="text-align:center;") -115
+          td(style="text-align:center;") [Hood of Dispassionate Execution]
