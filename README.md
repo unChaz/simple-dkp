@@ -1,11 +1,5 @@
-# Node.js Starter
-Single Page App setup using industry's best practices and modules.
-Node.js, Express, Mongoose, passport.js, component.io, Jade, Stylus and Bootstrap.
-
-[Demo](http://nodejs-starter.herokuapp.com)
-
-[![image](https://i.cloudup.com/ls3TZxQeMb.png)](https://cloudup.com/c9m73vDrkZk)
-
+# Discord DKP
+Single Page App DKP Manager
 
 ## Requirements
 * [NodeJS & NPM](http://nodejs.org/download)
@@ -17,7 +11,7 @@ Run from your terminal:
 
     git clone git@github.com:gravityonmars/nodejs-starter.git
     cd nodejs-starter
-    make 
+    make
 
 *Note:* edit your config/development.json with your Facebook & Twitter keys. [Instructions here](https://cloudup.com/c41pFaKcMBu)
 
@@ -35,23 +29,3 @@ Run from your terminal:
 ## Test
 
     npm test
-
-## Projects using it
-* [DemocracyOS](http://github.com/DemocracyOS/app)
-* [Auth0 Website](http://auth0.com)
-* [Add yours](https://github.com/gravityonmars/nodejs-starter/edit/master/README.md)
-
-## Contributors
-* [Cristian Douce](http://twitter.com/cristiandouce)
-* [Ricardo Rauch](http://twitter.com/gravityonmars)
-* [Sacha Lifszyc](http://twitter.com/slifszyc)
-
-## Common errors
-* `buffer.js:382 throw new Error('Unknown encoding');`
-  Update your node.js version
-* Difficulties under Windows, refer to issue [#4](https://github.com/gravityonmars/nodejs-starter/issues/4)
-* Heroku deployment check issue [#5](https://github.com/gravityonmars/nodejs-starter/issues/5)
-* Getting { [Error: EMFILE, open %fileName%'] errno: 20, code: 'EMFILE', after running make, make run or make run-dev This is due to a limit on the amount of files that can be open at the same time by your OS. Update your .base_profile file (or similar) by adding ulimit -n 2048.
-
-## Licence 
-MIT

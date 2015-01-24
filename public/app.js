@@ -976,10 +976,13 @@ page('/', function(ctx, next) {
 });
 require.register("homepage/homepage-template.js", function(exports, require, module){
 var jade = require("jade");
-module.exports = function anonymous(locals) {
+module.exports = function template(locals) {
 var buf = [];
-jade.indent = [];
-buf.push("\n<header>\n  <h1>Simple DKP</h1>\n  <p class=\"description\">Simple and Clean DKP Management. </p>\n</header>\n<p class=\"social-login\"><a href=\"/auth/twitter\" class=\"btn btn-primary\"> login with Twitter</a><a href=\"/auth/facebook\" class=\"btn btn-primary\"> login with Facebook</a></p>");;return buf.join("");
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
+buf.push("\n<header>\n  <h1>Discord DKP</h1>\n  <p class=\"description\">Simple and Discord DKP Management. </p>\n</header>\n<p class=\"social-login\"><a href=\"/auth/twitter\" class=\"btn btn-primary\"> login with Twitter</a><a href=\"/auth/facebook\" class=\"btn btn-primary\"> login with Facebook</a></p>");;return buf.join("");
 }
 });
 require.register("dashboard/dashboard-controller.js", function(exports, require, module){
@@ -1009,10 +1012,13 @@ page('/dashboard', user.required, function(ctx, next) {
 });
 require.register("dashboard/dashboard-template.js", function(exports, require, module){
 var jade = require("jade");
-module.exports = function anonymous(locals) {
+module.exports = function template(locals) {
 var buf = [];
-jade.indent = [];
-buf.push("\n<ul class=\"nav nav-tabs\">\n  <li role=\"presentation\" class=\"active\"><a href=\"/dashboard\">Dashboard</a></li>\n  <li role=\"presentation\" class=\"navbar-right\"><a href=\"/logout\">signout</a></li>\n</ul>\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h1>Pools</h1>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Players\n            <tbody>\n              <tr>\n                <td> <a href=\"/pool\">Discord Guild</a></td>\n                <td>25</td>\n              </tr>\n              <tr>\n                <td> <a href=\"/pool\">PUG</a></td>\n                <td>43</td>\n              </tr>\n            </tbody>\n          </th>\n        </tr>\n      </thead>\n    </table>\n    <form>\n      <input type=\"text\" placeholder=\"name\"/>\n      <input type=\"submit\" value=\"create\" class=\"btn btn-xs btn-primary\"/>\n    </form>\n  </div>\n</div>");;return buf.join("");
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
+buf.push("\n<ul class=\"nav nav-tabs\">\n  <li role=\"presentation\" class=\"active\"><a href=\"/dashboard\">Dashboard</a></li>\n  <li role=\"presentation\" class=\"navbar-right\"><a href=\"/logout\">signout</a></li>\n</ul>\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h1>My Pools</h1>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Players\n            <tbody>\n              <tr>\n                <td> <a href=\"/pool\">Discord Guild</a></td>\n                <td>25</td>\n              </tr>\n              <tr>\n                <td> <a href=\"/pool\">PUG</a></td>\n                <td>43</td>\n              </tr>\n            </tbody>\n          </th>\n        </tr>\n      </thead>\n    </table>\n    <form>\n      <input type=\"text\" placeholder=\"name\"/>\n      <input type=\"submit\" value=\"create\" class=\"btn btn-xs btn-primary\"/>\n    </form>\n  </div>\n</div>");;return buf.join("");
 }
 });
 require.register("component-emitter/index.js", function(exports, require, module){
@@ -2447,9 +2453,12 @@ page('/pool', user.required, function(ctx, next) {
 });
 require.register("pool/pool-template.js", function(exports, require, module){
 var jade = require("jade");
-module.exports = function anonymous(locals) {
+module.exports = function template(locals) {
 var buf = [];
-jade.indent = [];
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
 buf.push("\n<ul class=\"nav nav-tabs\">\n  <li role=\"presentation\"><a href=\"/dashboard\">Dashboard</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Discord Guild</a></li>\n  <li role=\"presentation\" class=\"navbar-right\"><a href=\"/logout\">signout</a></li>\n</ul>\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h2>Players <a class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-plus\"></span></a></h2>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Player</th>\n          <th>DKP\n            <tbody>\n              <tr>\n                <td> <a href=\"/player\">Muse</a></td>\n                <td>234</td>\n              </tr>\n              <tr>\n                <td> <a href=\"/player\">Yvayne</a></td>\n                <td>434</td>\n              </tr>\n            </tbody>\n          </th>\n        </tr>\n      </thead>\n    </table>\n    <h2>Import DKP</h2>\n    <p>With this tool you can import DKP standings from several WoW Addons.</p>\n    <div class=\"center-block\">\n      <form role=\"form\">\n        <input type=\"file\"/><br/>\n        <select>\n          <option value=\"Quick DKP\">Quick DKP</option>\n          <option value=\"epgp\">epgp</option>\n        </select><br/><br/>\n        <button type=\"sumbit\" class=\"btn btn-primary\">Import</button>\n      </form>\n    </div>\n  </div>\n  <div class=\"col-md-6\">\n    <h2>Raids <a class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-plus\"></span></a></h2>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Date</th>\n          <th>Net DKP</th>\n        </tr>\n        <tbody>\n          <tr>\n            <td> <a href=\"/raid\">Tuesday Progression</a></td>\n            <td>12/16/2014</td>\n            <td>-98</td>\n          </tr>\n          <tr>\n            <td> <a href=\"/raid\">Thursday Progression</a></td>\n            <td>12/18/2014</td>\n            <td>23</td>\n          </tr>\n        </tbody>\n      </thead>\n    </table>\n  </div>\n</div>");;return buf.join("");
 }
 });
@@ -2480,9 +2489,12 @@ page('/player', user.required, function(ctx, next) {
 });
 require.register("player/player-template.js", function(exports, require, module){
 var jade = require("jade");
-module.exports = function anonymous(locals) {
+module.exports = function template(locals) {
 var buf = [];
-jade.indent = [];
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
 buf.push("\n<ul class=\"nav nav-tabs\">\n  <li role=\"presentation\"><a href=\"/dashboard\">Dashboard</a></li>\n  <li role=\"presentation\"><a href=\"/pool\">Discord Guild</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Muse</a></li>\n  <li role=\"presentation\" class=\"navbar-right\"><a href=\"/logout\">signout</a></li>\n</ul>\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h1>Muse</h1>\n    <table class=\"table table-striped\">\n      <tbody>\n        <tr>\n          <th><strong>Class</strong></th>\n          <th>Shaman</th>\n        </tr>\n        <tr>\n          <th> <strong>Specialization</strong></th>\n          <th>Restoration</th>\n        </tr>\n        <tr>\n          <th><strong>Race</strong></th>\n          <th>Draenei</th>\n        </tr>\n        <tr>\n          <th><strong>Bosses Downed</strong></th>\n          <th>25</th>\n        </tr>\n        <tr>\n          <th><strong>DKP Spent</strong></th>\n          <th>356</th>\n        </tr>\n        <tr>\n          <th><strong>DKP Earned</strong></th>\n          <th>420</th>\n        </tr>\n        <tr>\n          <th><strong>Net DKP</strong></th>\n          <th>64</th>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"col-md-6\">\n    <h2>Latest Raids</h2>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th>Name</th>\n          <th>Date</th>\n          <th>Net DKP</th>\n        </tr>\n        <tbody>\n          <tr>\n            <td> <a href=\"/raid\">Tuesday Progression</a></td>\n            <td>12/16/2014</td>\n            <td>-98</td>\n          </tr>\n          <tr>\n            <td> <a href=\"/raid\">Thursday Progression</a></td>\n            <td>12/18/2014</td>\n            <td>23</td>\n          </tr>\n        </tbody>\n      </thead>\n    </table>\n  </div>\n</div>\n<h2>Ledger </h2>\n<table class=\"table\">\n  <thead>\n    <tr>\n      <th>Raid</th>\n      <th>Type</th>\n      <th>DKP</th>\n      <th>Note\n        <tbody>\n          <tr>\n            <td> <a href=\"/raid\">Tuesday Progression</a></td>\n            <td>other</td>\n            <td>2</td>\n            <td>Showed up early</td>\n          </tr>\n          <tr>\n            <td> <a href=\"/raid\">Tuesday Progression</a></td>\n            <td>Boss Kill</td>\n            <td>15</td>\n            <td>Korgath: Normal</td>\n          </tr>\n          <tr>\n            <td> <a href=\"/raid\">Tuesday Progression</a></td>\n            <td>Loot</td>\n            <td>-115</td>\n            <td>[Hood of Dispassionate Execution]</td>\n          </tr>\n        </tbody>\n      </th>\n    </tr>\n  </thead>\n</table>");;return buf.join("");
 }
 });
@@ -2513,9 +2525,12 @@ page('/raid', user.required, function(ctx, next) {
 });
 require.register("raid/raid-template.js", function(exports, require, module){
 var jade = require("jade");
-module.exports = function anonymous(locals) {
+module.exports = function template(locals) {
 var buf = [];
-jade.indent = [];
+var jade_mixins = {};
+var jade_interp;
+
+var jade_indent = [];
 buf.push("\n<ul class=\"nav nav-tabs\">\n  <li role=\"presentation\"><a href=\"/dashboard\">Dashboard</a></li>\n  <li role=\"presentation\"><a href=\"/pool\">Discord Guild</a></li>\n  <li role=\"presentation\" class=\"active\"><a href=\"#\">Tuesday Night Raid</a></li>\n  <li role=\"presentation\" class=\"navbar-right\"><a href=\"/logout\">signout</a></li>\n</ul>\n<h1>Thursday Highmaul Progression</h1>\n<table class=\"table table-striped\">\n  <tbody>\n    <tr>\n      <th><strong>Date</strong></th>\n      <th>12/18/2014</th>\n    </tr>\n    <tr>\n      <th> <strong>Pool</strong></th>\n      <th>Discord Guild</th>\n    </tr>\n    <tr>\n      <th><strong>DKP Distributed</strong></th>\n      <th>230</th>\n    </tr>\n    <tr>\n      <th><strong>DKP Spent</strong></th>\n      <th>214</th>\n    </tr>\n    <tr>\n      <th><strong># Players</strong></th>\n      <th>16</th>\n    </tr>\n    <tr>\n      <th><strong>Bosses Downed</strong></th>\n      <th>6</th>\n    </tr>\n  </tbody>\n</table>\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h2>Players</h2>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th> \n            <input type=\"checkbox\"/>\n          </th>\n          <th>Name</th>\n          <th>Role</th>\n          <th>&Delta; DKP</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Muse</a></th>\n          <th>Healer</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Yvayne</a></th>\n          <th>Healer</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Cabanaboy</a></th>\n          <th>Tank</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Bigdcamtowin</a></th>\n          <th>DPS</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Omnath</a></th>\n          <th>DPS</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Aquila</a></th>\n          <th>DPS</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Coleo</a></th>\n          <th>Healer</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Earthmuffins</a></th>\n          <th>Tank</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Natzumi</a></th>\n          <th>DPS</th>\n          <th>23</th>\n        </tr>\n        <tr>\n          <th>\n            <input type=\"checkbox\"/>\n          </th>\n          <th> <a href=\"/player\">Sharatmonk</a></th>\n          <th>DPS</th>\n          <th>23</th>\n        </tr>\n      </tbody>\n    </table>\n    <div class=\"center-block\">\n      <select>\n        <option value=\"Boss Kill\">Boss Kill</option>\n        <option value=\"Loot\">Loot</option>\n        <option value=\"Other\">Other</option>\n      </select>\n      <input type=\"number\" placeholder=\"DKP\" style=\"width:50px;\"/>\n      <input type=\"text\" placeholder=\"notes\"/>\n      <button type=\"submit\" class=\"btn btn-default btn-sm\">Add</button>\n    </div>\n  </div>\n  <div class=\"col-md-6\">    \n    <h2>Ledger</h2>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th style=\"text-align:center;\">Player</th>\n          <th style=\"text-align:center;\">Type</th>\n          <th style=\"text-align:center;\">DKP</th>\n          <th style=\"text-align:center;\">Note</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td style=\"text-align:center;\"> <a href=\"/player\">Muse</a></td>\n          <td style=\"text-align:center;\">other</td>\n          <td style=\"text-align:center;\">2</td>\n          <td style=\"text-align:center;\">Showed up early</td>\n        </tr>\n        <tr>\n          <td style=\"text-align:center;\"> <a href=\"/player\">Muse</a></td>\n          <td style=\"text-align:center;\">Boss Kill</td>\n          <td style=\"text-align:center;\">15</td>\n          <td style=\"text-align:center;\">Korgath: Normal</td>\n        </tr>\n        <tr>\n          <td style=\"text-align:center;\"> <a href=\"/player\">Muse</a></td>\n          <td style=\"text-align:center;\">Loot</td>\n          <td style=\"text-align:center;\">-115</td>\n          <td style=\"text-align:center;\">[Hood of Dispassionate Execution]</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>");;return buf.join("");
 }
 });
